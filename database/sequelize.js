@@ -23,10 +23,10 @@ const Event = EventModel(sequelize, Sequelize);
 const Partner = PartnerModel(sequelize, Sequelize);
 
 
-// sequelize.sync({ force: true })
-//     .then(() => {
-//         console.log(`Database & tables created!`)
-//     });
+sequelize.sync({ force: true })
+    .then(() => {
+        console.log(`Database & tables created!`)
+    });
 
 
 const UserToEvent = sequelize.define('user_event', {});
