@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
         if (existingUser) {
             token = jwt.sign(
                 _.pick(
-                    existingUser, ['profile_url', 'uid', 'photo_url', 'display_name', 'email', 'summary', 'bio']
+                    existingUser, ['id', 'profile_url', 'uid', 'photo_url', 'display_name', 'email', 'summary', 'bio']
                 ),
                 privateKey, {expiresIn: expiresIn});
             isNew = false;
@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
             );
             token = jwt.sign(
                 _.pick(
-                    newUser, ['profile_url', 'uid', 'photo_url', 'display_name', 'email', 'summary', 'bio']
+                    newUser, ['id', 'profile_url', 'uid', 'photo_url', 'display_name', 'email', 'summary', 'bio']
                 ),
                 privateKey, {expiresIn: expiresIn});
 

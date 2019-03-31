@@ -8,8 +8,12 @@ const {User} = require('../../database/sequelize');
 
 const router = express.Router();
 
+router.get('', auth, async (req, res) => {
+    const user = await User.findOne({where: {uid: req.headers.user.uid}});
+    return res.send(user);
+});
+
 router.put('', auth, async (req, res) => {
-    console.log(req.headers.user.uid);
     const user = await User.findOne({where: {uid: req.headers.user.uid}});
     if (user) {
         try {
