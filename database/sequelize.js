@@ -5,8 +5,8 @@ const EventModel = require('./models/event');
 const LinkModel = require('./models/link');
 const PartnerModel = require('./models/partner');
 
-const sequelize = new Sequelize('elevent', 'root', 'root', {
-    host: 'localhost',
+const sequelize = new Sequelize('elevent', 'root', 'w2a6c8wvk', {
+    host: '35.246.154.124',
     dialect: 'mysql',
     pool: {
         max: 10,
